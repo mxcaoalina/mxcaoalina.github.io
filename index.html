@@ -6,13 +6,29 @@
     <title>MINGXI's Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
     <style>
+      :root {
+        --primary-color: #6366f1;
+        --primary-hover: #4f46e5;
+        --gradient-start: #6366f1;
+        --gradient-end: #8b5cf6;
+        --text-primary: #1f2937;
+        --text-secondary: #4b5563;
+        --bg-light: #f9fafb;
+      }
+
       body {
         font-family: 'Segoe UI', sans-serif;
+        background-color: var(--bg-light);
+      }
+
+      .navbar {
+        background-color: white !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       }
 
       .hero {
         height: 100vh;
-        background: linear-gradient(to right, #4facfe, #00f2fe);
+        background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
         color: white;
         display: flex;
         flex-direction: column;
@@ -23,61 +39,82 @@
       }
 
       .hero img {
-        width: 140px;
-        height: 140px;
+        width: 160px;
+        height: 160px;
         border-radius: 50%;
         object-fit: cover;
-        margin-bottom: 1rem;
-        border: 4px solid white;
+        margin-bottom: 1.5rem;
+        border: 4px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .hero img:hover {
+        transform: scale(1.05);
       }
 
       .hero h1 {
-        font-size: 3rem;
+        font-size: 3.5rem;
         font-weight: bold;
         margin: 0.5rem 0;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
 
       .hero p {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         max-width: 600px;
         margin: 0.5rem 0 1.5rem;
-        line-height: 1.5;
+        line-height: 1.6;
+        opacity: 0.9;
       }
 
       .btn-group {
-        margin-top: 1rem;
+        margin-top: 1.5rem;
         gap: 1rem;
+      }
+
+      .btn-light {
+        background-color: white;
+        color: var(--primary-color);
+        border: none;
+        padding: 0.8rem 2rem;
+        font-weight: 500;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-light:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        color: var(--primary-hover);
       }
 
       .project-section {
         padding: 5rem 2rem;
-        background-color: #f8f9fa;
+        background-color: var(--bg-light);
       }
 
       .project-section h2 {
         text-align: center;
         margin-bottom: 3rem;
-        color: #333;
+        color: var(--text-primary);
         font-size: 2.5rem;
         font-weight: bold;
       }
 
       .card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         transition: all 0.3s ease;
-        border: none;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0,0,0,0.05);
         overflow: hidden;
       }
 
       .card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      .card-img-top {
-        height: 200px;
-        object-fit: cover;
-        border-bottom: 1px solid #eee;
+        box-shadow: 0 12px 20px rgba(0,0,0,0.1);
       }
 
       .card-body {
@@ -85,32 +122,32 @@
       }
 
       .card-title {
-        color: #2c3e50;
+        color: var(--text-primary);
         font-weight: bold;
         margin-bottom: 1rem;
         font-size: 1.5rem;
       }
 
       .card-text {
-        color: #666;
+        color: var(--text-secondary);
         line-height: 1.6;
-        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
       }
 
       .tech-stack {
         margin: 1.5rem 0;
-        font-size: 0.9rem;
       }
 
       .tech-stack span {
-        background-color: #e9ecef;
+        background-color: #f3f4f6;
         padding: 0.4rem 0.8rem;
         border-radius: 20px;
         margin-right: 0.5rem;
         display: inline-block;
         margin-bottom: 0.5rem;
         font-weight: 500;
-        color: #495057;
+        color: var(--text-secondary);
+        border: 1px solid #e5e7eb;
       }
 
       .project-links {
@@ -124,28 +161,52 @@
         text-align: center;
         padding: 0.8rem;
         font-weight: 500;
+        border-radius: 12px;
         transition: all 0.3s ease;
       }
 
-      .project-links a:hover {
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-hover);
+        border-color: var(--primary-hover);
         transform: translateY(-2px);
       }
 
-      .section-title {
-        text-align: center;
-        margin-bottom: 1rem;
-        color: #666;
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
+      .btn-outline-primary {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      .btn-outline-primary:hover {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        transform: translateY(-2px);
+      }
+
+      .nav-link {
+        color: var(--text-secondary);
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-color);
+      }
+
+      .nav-link.active {
+        color: var(--primary-color) !important;
+        font-weight: 500;
       }
     </style>
   </head>
 
   <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg bg-light shadow-sm">
-      <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
         <a class="navbar-brand fw-bold" href="#">MINGXI's PORTFOLIO</a>
         <div class="collapse navbar-collapse">
           <ul class="nav nav-underline ms-auto">
@@ -153,7 +214,7 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
+              <a class="nav-link" href="Project_Page.html">Projects</a>
             </li>
           </ul>
         </div>
@@ -175,12 +236,10 @@
     <!-- Projects Section -->
     <section class="project-section" id="projects">
       <div class="container">
-        <p class="section-title">My Work</p>
         <h2>Featured Projects</h2>
         <div class="row row-cols-1 row-cols-md-2 g-4">
           <div class="col">
             <div class="card h-100">
-              <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Banking Application Preview">
               <div class="card-body">
                 <h5 class="card-title">Banking Application</h5>
                 <p class="card-text">
@@ -203,20 +262,19 @@
 
           <div class="col">
             <div class="card h-100">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Hackathon Project Preview">
               <div class="card-body">
-                <h5 class="card-title">Hackathon Project</h5>
+                <h5 class="card-title">Microsoft AI Agent Hackathon</h5>
                 <p class="card-text">
-                  A cutting-edge solution born from a hackathon challenge, demonstrating the power of rapid innovation and technical excellence. This project showcases the ability to deliver impactful solutions under pressure.
+                  An AI-powered mobile application that helps users find ideal restaurants for a date by chatting with a personalized recommendation agent.
                 </p>
                 <div class="tech-stack">
                   <span>Python</span>
-                  <span>ML/AI</span>
-                  <span>APIs</span>
-                  <span>Data Science</span>
+                  <span>TypeScript</span>
+                  <span>Azure OpenAI</span>
+                  <span>React Native</span>
                 </div>
                 <div class="project-links">
-                  <a href="https://github.com/mxcaoalina/Speech_recognition" class="btn btn-primary">View Code</a>
+                  <a href="https://github.com/mxcaoalina/DateMeal_Mobile" class="btn btn-primary">View Code</a>
                   <a href="#" class="btn btn-outline-primary">Project Details</a>
                 </div>
               </div>
