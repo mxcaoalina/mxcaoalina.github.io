@@ -6,18 +6,28 @@
     <title>Projects - MINGXI's Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
     <style>
+      :root {
+        --primary-color: #6366f1;
+        --primary-hover: #4f46e5;
+        --gradient-start: #6366f1;
+        --gradient-end: #8b5cf6;
+        --text-primary: #1f2937;
+        --text-secondary: #4b5563;
+        --bg-light: #f9fafb;
+      }
+
       body {
         font-family: 'Segoe UI', sans-serif;
-        background-color: #f8f9fa;
+        background-color: var(--bg-light);
       }
 
       .navbar {
         background-color: white !important;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       }
 
       .page-header {
-        background: linear-gradient(to right, #4facfe, #00f2fe);
+        background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
         color: white;
         padding: 4rem 0;
         margin-bottom: 3rem;
@@ -37,15 +47,17 @@
 
       .project-card {
         background: white;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
         margin-bottom: 2rem;
         overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.05);
       }
 
       .project-card:hover {
         transform: translateY(-5px);
+        box-shadow: 0 12px 20px rgba(0,0,0,0.1);
       }
 
       .project-image {
@@ -61,12 +73,12 @@
       .project-title {
         font-size: 1.8rem;
         font-weight: bold;
-        color: #2c3e50;
+        color: var(--text-primary);
         margin-bottom: 1rem;
       }
 
       .project-description {
-        color: #666;
+        color: var(--text-secondary);
         line-height: 1.6;
         margin-bottom: 1.5rem;
       }
@@ -76,14 +88,15 @@
       }
 
       .tech-stack span {
-        background-color: #e9ecef;
+        background-color: #f3f4f6;
         padding: 0.4rem 0.8rem;
         border-radius: 20px;
         margin-right: 0.5rem;
         display: inline-block;
         margin-bottom: 0.5rem;
         font-weight: 500;
-        color: #495057;
+        color: var(--text-secondary);
+        border: 1px solid #e5e7eb;
       }
 
       .project-links {
@@ -97,6 +110,30 @@
         text-align: center;
         padding: 0.8rem;
         font-weight: 500;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-hover);
+        border-color: var(--primary-hover);
+        transform: translateY(-2px);
+      }
+
+      .btn-outline-primary {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      .btn-outline-primary:hover {
+        background-color: var(--primary-color);
+        border-color: var(--primary-color);
+        transform: translateY(-2px);
       }
 
       .project-features {
@@ -106,24 +143,40 @@
 
       .project-features li {
         margin-bottom: 0.5rem;
-        color: #666;
+        color: var(--text-secondary);
       }
 
       .back-to-home {
         position: fixed;
         bottom: 2rem;
         right: 2rem;
-        background: #4facfe;
+        background: var(--primary-color);
         color: white;
         padding: 1rem;
         border-radius: 50%;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease;
+        box-shadow: 0 4px 6px rgba(99, 102, 241, 0.2);
+        transition: all 0.3s ease;
       }
 
       .back-to-home:hover {
         transform: translateY(-3px);
+        background: var(--primary-hover);
         color: white;
+        box-shadow: 0 6px 8px rgba(99, 102, 241, 0.3);
+      }
+
+      .nav-link {
+        color: var(--text-secondary);
+        transition: color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--primary-color);
+      }
+
+      .nav-link.active {
+        color: var(--primary-color) !important;
+        font-weight: 500;
       }
     </style>
   </head>
@@ -188,24 +241,24 @@
       <div class="project-card">
         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="project-image" alt="Hackathon Project">
         <div class="project-content">
-          <h2 class="project-title">Hackathon Project</h2>
+          <h2 class="project-title">Microsoft AI Agent Hackathon</h2>
           <p class="project-description">
-            A cutting-edge solution born from a hackathon challenge, demonstrating the power of rapid innovation and technical excellence. This project showcases the ability to deliver impactful solutions under pressure.
+            An AI-powered mobile application that helps users find ideal restaurants for a date by chatting with a personalized recommendation agent.
           </p>
           <div class="tech-stack">
             <span>Python</span>
-            <span>ML/AI</span>
-            <span>APIs</span>
-            <span>Data Science</span>
+            <span>TypeScript</span>
+            <span>Azure OpenAI</span>
+            <span>React Native</span>
           </div>
           <ul class="project-features">
-            <li>Advanced machine learning algorithms</li>
-            <li>Real-time data processing</li>
-            <li>Intuitive user interface</li>
-            <li>Scalable architecture</li>
+            <li>Real-time refinement of restaurant recommendations</li>
+            <li>Natural language processing for user queries</li>
+            <li>Mobile application development</li>
+            <li>Graceful integration of Azure OpenAI services</li>
           </ul>
           <div class="project-links">
-            <a href="https://github.com/mxcaoalina/Speech_recognition" class="btn btn-primary">View Code</a>
+            <a href="https://github.com/mxcaoalina/DateMeal_Mobile" class="btn btn-primary">View Code</a>
             <a href="#" class="btn btn-outline-primary">Project Details</a>
           </div>
         </div>
