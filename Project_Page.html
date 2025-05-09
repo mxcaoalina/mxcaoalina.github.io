@@ -42,6 +42,7 @@
         transition: transform 0.3s ease;
         margin-bottom: 2rem;
         overflow: hidden;
+        height: 100%;
       }
 
       .project-card:hover {
@@ -50,40 +51,42 @@
 
       .project-image {
         width: 100%;
-        height: 300px;
+        height: 250px;
         object-fit: cover;
       }
 
       .project-content {
-        padding: 2rem;
+        padding: 1.5rem;
       }
 
       .project-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         font-weight: bold;
         color: #2c3e50;
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
       }
 
       .project-description {
         color: #666;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+        font-size: 1rem;
       }
 
       .tech-stack {
-        margin: 1.5rem 0;
+        margin: 1rem 0;
       }
 
       .tech-stack span {
         background-color: #e9ecef;
-        padding: 0.4rem 0.8rem;
-        border-radius: 20px;
+        padding: 0.3rem 0.6rem;
+        border-radius: 15px;
         margin-right: 0.5rem;
         display: inline-block;
         margin-bottom: 0.5rem;
         font-weight: 500;
         color: #495057;
+        font-size: 0.85rem;
       }
 
       .project-links {
@@ -100,13 +103,14 @@
       }
 
       .project-features {
-        margin: 1.5rem 0;
-        padding-left: 1.5rem;
+        margin: 1rem 0;
+        padding-left: 1.25rem;
       }
 
       .project-features li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.4rem;
         color: #666;
+        font-size: 0.95rem;
       }
 
       .back-to-home {
@@ -156,57 +160,90 @@
 
     <!-- Projects Section -->
     <section class="container">
-      <!-- Banking Application -->
-      <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="project-image" alt="Banking Application">
-        <div class="project-content">
-          <h2 class="project-title">Banking Application</h2>
-          <p class="project-description">
-            A modern banking platform that transforms traditional financial services into an intuitive digital experience. Built with a focus on security, user experience, and scalability.
-          </p>
-          <div class="tech-stack">
-            <span>React</span>
-            <span>Node.js</span>
-            <span>Express</span>
-            <span>MongoDB</span>
-            <span>JWT</span>
-          </div>
-          <ul class="project-features">
-            <li>Secure user authentication and authorization</li>
-            <li>Real-time transaction processing</li>
-            <li>Responsive design for all devices</li>
-            <li>Comprehensive account management</li>
-          </ul>
-          <div class="project-links">
-            <a href="https://github.com/mxcaoalina/Banking_Application" class="btn btn-dark">View Code</a>
-            <a href="#" class="btn btn-light">Live Demo</a>
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Hackathon Project -->
+        <div class="col">
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="project-image" alt="Hackathon Project">
+            <div class="project-content">
+              <h2 class="project-title">Microsoft AI Agent Hackathon</h2>
+              <p class="project-description">
+                An AI-powered mobile application that helps users find ideal restaurants for a date by chatting with a personalized recommendation agent.
+              </p>
+              <div class="tech-stack">
+                <span>Python</span>
+                <span>TypeScript</span>
+                <span>Azure OpenAI</span>
+                <span>React Native</span>
+              </div>
+              <ul class="project-features">
+                <li>Real-time refinement of restaurant recommendations</li>
+                <li>Natural language processing for user queries</li>
+                <li>Mobile application development</li>
+                <li>Graceful integration of Azure OpenAI services</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/mxcaoalina/DateMeal_Mobile" class="btn btn-dark">View Code</a>
+                <a href="https://drive.google.com/file/d/1_zzxjOtndYJLJsYm19UYlWKZYLyoMRw1/view?usp=share_link" class="btn btn-light">Live Demo</a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Hackathon Project -->
-      <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="project-image" alt="Hackathon Project">
-        <div class="project-content">
-          <h2 class="project-title">Microsoft AI Agent Hackathon</h2>
-          <p class="project-description">
-            An AI-powered mobile application that helps users find ideal restaurants for a date by chatting with a personalized recommendation agent.
-          </p>
-          <div class="tech-stack">
-            <span>Python</span>
-            <span>TypeScript</span>
-            <span>Azure OpenAI</span>
-            <span>React Native</span>
+        <!-- Banking Application -->
+        <div class="col">
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="project-image" alt="Banking Application">
+            <div class="project-content">
+              <h2 class="project-title">Banking Application</h2>
+              <p class="project-description">
+                A modern banking platform that transforms traditional financial services into an intuitive digital experience. Built with a focus on security, user experience, and scalability.
+              </p>
+              <div class="tech-stack">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>Express</span>
+                <span>MongoDB</span>
+                <span>JWT</span>
+              </div>
+              <ul class="project-features">
+                <li>Secure user authentication and authorization</li>
+                <li>Real-time transaction processing</li>
+                <li>Responsive design for all devices</li>
+                <li>Comprehensive account management</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/mxcaoalina/Banking_Application" class="btn btn-dark">View Code</a>
+                <a href="https://badbank-full-stack-capstone-844c728b4974.herokuapp.com/#" class="btn btn-light">Live Demo</a>
+              </div>
+            </div>
           </div>
-          <ul class="project-features">
-            <li>Real-time refinement of restaurant recommendations</li>
-            <li>Natural language processing for user queries</li>
-            <li>Mobile application development</li>
-            <li>Graceful integration of Azure OpenAI services</li>
-          </ul>
-          <div class="project-links">
-            <a href="https://github.com/mxcaoalina/DateMeal_Mobile" class="btn btn-dark">View Code</a>
-            <a href="https://drive.google.com/file/d/1_zzxjOtndYJLJsYm19UYlWKZYLyoMRw1/view?usp=share_link" class="btn btn-light">Live Demo</a>
+        </div>
+
+        <!-- Thread Pool -->
+        <div class="col">
+          <div class="project-card">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="project-image" alt="Hackathon Project">
+            <div class="project-content">
+              <h2 class="project-title">Thread Pool Optimization</h2>
+              <p class="project-description">
+                A Java-based drop-in thread pool library with priority scheduling, task rejection handling, and graceful shutdown—designed for real-world performance and extensibility.
+              </p>
+              <div class="tech-stack">
+                <span>JAVA</span>
+                <span>Concurrency</span>
+                <span>Threading</span>
+                <span>Performance Optimization</span>
+              </div>
+              <ul class="project-features">
+                <li>Adaptive scaling of thread pool size</li>
+                <li>Deadlock detection and prevention</li>
+                <li>Graceful shutdown with in-flight task completion</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://github.com/mxcaoalina/Thread_Pool" class="btn btn-dark">View Code</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
