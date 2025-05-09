@@ -3,131 +3,223 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>MINGXI's Portfolio</title>
-
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      crossorigin="anonymous"
-    />
-
+    <title>Projects - MINGXI's Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
     <style>
-      .hero {
-        height: 100vh;
-        background: linear-gradient(to right, #4facfe, #00f2fe);
-        color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 2rem;
+      body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #f8f9fa;
       }
 
-      .hero h1 {
-        font-size: 3rem;
+      .navbar {
+        background-color: white !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+
+      .page-header {
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+        color: white;
+        padding: 4rem 0;
+        margin-bottom: 3rem;
+      }
+
+      .page-header h1 {
+        font-size: 2.5rem;
         font-weight: bold;
       }
 
-      .hero p {
-        font-size: 1.25rem;
+      .page-header p {
+        font-size: 1.2rem;
         max-width: 600px;
         margin: 1rem auto;
+        opacity: 0.9;
       }
 
-      .hero .btn-group {
+      .project-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        margin-bottom: 2rem;
+        overflow: hidden;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .project-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .project-content {
+        padding: 2rem;
+      }
+
+      .project-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+      }
+
+      .project-description {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .tech-stack {
+        margin: 1.5rem 0;
+      }
+
+      .tech-stack span {
+        background-color: #e9ecef;
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        margin-right: 0.5rem;
+        display: inline-block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        color: #495057;
+      }
+
+      .project-links {
+        display: flex;
+        gap: 1rem;
         margin-top: 1.5rem;
       }
 
-      .project-section {
-        padding: 3rem 2rem;
+      .project-links a {
+        flex: 1;
+        text-align: center;
+        padding: 0.8rem;
+        font-weight: 500;
       }
 
-      .card-text {
-        min-height: 140px;
+      .project-features {
+        margin: 1.5rem 0;
+        padding-left: 1.5rem;
+      }
+
+      .project-features li {
+        margin-bottom: 0.5rem;
+        color: #666;
+      }
+
+      .back-to-home {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: #4facfe;
+        color: white;
+        padding: 1rem;
+        border-radius: 50%;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+      }
+
+      .back-to-home:hover {
+        transform: translateY(-3px);
+        color: white;
       }
     </style>
   </head>
 
   <body>
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg bg-light shadow-sm">
-      <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="#">MINGXI's PORTFOLIO</a>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">MINGXI's PORTFOLIO</a>
         <div class="collapse navbar-collapse">
           <ul class="nav nav-underline ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
+              <a class="nav-link active" href="Project_Page.html">Projects</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <h1>Hi, I'm Mingxi Cao </h1>
-      <p>
-        Architect turned software engineer. I design and build full-stack applications and AI tools that merge creativity and code.
-      </p>
-      <div class="btn-group">
-        <a href="#projects" class="btn btn-light me-2">View Projects</a>
-        <a href="mailto:you@example.com" class="btn btn-outline-light">Contact Me</a>
+    <!-- Page Header -->
+    <header class="page-header text-center">
+      <div class="container">
+        <h1>My Projects</h1>
+        <p>Explore my journey through code, from full-stack applications to innovative solutions</p>
       </div>
-    </section>
+    </header>
 
     <!-- Projects Section -->
-    <section class="project-section" id="projects">
-      <div class="container">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Bad Bank</h5>
-                <p class="card-text">
-                 A secure full-stack banking application featuring basic banking functionalities, authentication, and role-based access.
-                </p>
-                <a class="btn btn-primary" href="https://github.com/mxcaoalina/PacMen_Exercise">GitHub</a>
-              </div>
-            </div>
+    <section class="container">
+      <!-- Banking Application -->
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="project-image" alt="Banking Application">
+        <div class="project-content">
+          <h2 class="project-title">Banking Application</h2>
+          <p class="project-description">
+            A modern banking platform that transforms traditional financial services into an intuitive digital experience. Built with a focus on security, user experience, and scalability.
+          </p>
+          <div class="tech-stack">
+            <span>React</span>
+            <span>Node.js</span>
+            <span>Express</span>
+            <span>MongoDB</span>
+            <span>JWT</span>
           </div>
-
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Thread Pool</h5>
-                <p class="card-text">
-                  A custom Java thread pool concurrency framework with priority-based scheduling.
-                </p>
-                <a class="btn btn-primary" href="https://github.com/mxcaoalina/Eyes_Exercise">GitHub</a>
-              </div>
-            </div>
+          <ul class="project-features">
+            <li>Secure user authentication and authorization</li>
+            <li>Real-time transaction processing</li>
+            <li>Responsive design for all devices</li>
+            <li>Comprehensive account management</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/mxcaoalina/Banking_Application" class="btn btn-primary">View Code</a>
+            <a href="#" class="btn btn-outline-primary">Live Demo</a>
           </div>
+        </div>
+      </div>
 
-          <div class="col">
-            <div class="card h-100">
-              <div class="card-body">
-                <h5 class="card-title">Voice Recognition</h5>
-                <p class="card-text">
-                  A real-time transcription and podcast summarization application for speech-to-text and sentiment analysis.
-                </p>
-                <a class="btn btn-primary" href="https://github.com/mxcaoalina/MIT-Realtime-Bus-Tracker">GitHub</a>
-              </div>
-            </div>
+      <!-- Hackathon Project -->
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="project-image" alt="Hackathon Project">
+        <div class="project-content">
+          <h2 class="project-title">Hackathon Project</h2>
+          <p class="project-description">
+            A cutting-edge solution born from a hackathon challenge, demonstrating the power of rapid innovation and technical excellence. This project showcases the ability to deliver impactful solutions under pressure.
+          </p>
+          <div class="tech-stack">
+            <span>Python</span>
+            <span>ML/AI</span>
+            <span>APIs</span>
+            <span>Data Science</span>
+          </div>
+          <ul class="project-features">
+            <li>Advanced machine learning algorithms</li>
+            <li>Real-time data processing</li>
+            <li>Intuitive user interface</li>
+            <li>Scalable architecture</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://github.com/mxcaoalina/Speech_recognition" class="btn btn-primary">View Code</a>
+            <a href="#" class="btn btn-outline-primary">Project Details</a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Back to Home Button -->
+    <a href="index.html" class="back-to-home">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+        <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+      </svg>
+    </a>
+
     <!-- Bootstrap JS -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   </body>
 </html>
