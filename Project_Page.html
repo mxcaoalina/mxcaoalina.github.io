@@ -5,131 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Projects - MINGXI's Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
-    <style>
-      body {
-        font-family: 'Segoe UI', sans-serif;
-        background-color: #f8f9fa;
-      }
-
-      .navbar {
-        background-color: white !important;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      }
-
-      .page-header {
-        background: linear-gradient(to right, #4facfe, #00f2fe);
-        color: white;
-        padding: 4rem 0;
-        margin-bottom: 3rem;
-      }
-
-      .page-header h1 {
-        font-size: 2.5rem;
-        font-weight: bold;
-      }
-
-      .page-header p {
-        font-size: 1.2rem;
-        max-width: 600px;
-        margin: 1rem auto;
-        opacity: 0.9;
-      }
-
-      .project-card {
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-        margin-bottom: 2rem;
-        overflow: hidden;
-        height: 100%;
-      }
-
-      .project-card:hover {
-        transform: translateY(-5px);
-      }
-
-      .project-image {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-      }
-
-      .project-content {
-        padding: 1.5rem;
-      }
-
-      .project-title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #2c3e50;
-        margin-bottom: 0.75rem;
-      }
-
-      .project-description {
-        color: #666;
-        line-height: 1.5;
-        margin-bottom: 1rem;
-        font-size: 1rem;
-      }
-
-      .tech-stack {
-        margin: 1rem 0;
-      }
-
-      .tech-stack span {
-        background-color: #e9ecef;
-        padding: 0.3rem 0.6rem;
-        border-radius: 15px;
-        margin-right: 0.5rem;
-        display: inline-block;
-        margin-bottom: 0.5rem;
-        font-weight: 500;
-        color: #495057;
-        font-size: 0.85rem;
-      }
-
-      .project-links {
-        display: flex;
-        gap: 1rem;
-        margin-top: 1.5rem;
-      }
-
-      .project-links a {
-        flex: 1;
-        text-align: center;
-        padding: 0.8rem;
-        font-weight: 500;
-      }
-
-      .project-features {
-        margin: 1rem 0;
-        padding-left: 1.25rem;
-      }
-
-      .project-features li {
-        margin-bottom: 0.4rem;
-        color: #666;
-        font-size: 0.95rem;
-      }
-
-      .back-to-home {
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        background: #4facfe;
-        color: white;
-        padding: 1rem;
-        border-radius: 50%;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease;
-      }
-
-      .back-to-home:hover {
-        transform: translateY(-3px);
-        color: white;
-      }
-    </style>
+    <link href="assets/css/styles.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -137,7 +13,10 @@
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
         <a class="navbar-brand fw-bold" href="index.html">MINGXI's PORTFOLIO</a>
-        <div class="collapse navbar-collapse">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="nav nav-underline ms-auto">
             <li class="nav-item">
               <a class="nav-link" href="index.html">Home</a>
@@ -164,7 +43,7 @@
         <!-- Hackathon Project -->
         <div class="col">
           <div class="project-card">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="project-image" alt="Hackathon Project">
+            <img src="assets/images/projects/hackathon.png" class="project-image" alt="Hackathon Project">
             <div class="project-content">
               <h2 class="project-title">Microsoft AI Agent Hackathon</h2>
               <p class="project-description">
@@ -193,7 +72,7 @@
         <!-- Banking Application -->
         <div class="col">
           <div class="project-card">
-            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="project-image" alt="Banking Application">
+            <img src="assets/images/projects/banking.png" class="project-image" alt="Banking Application">
             <div class="project-content">
               <h2 class="project-title">Banking Application</h2>
               <p class="project-description">
@@ -223,7 +102,7 @@
         <!-- Thread Pool -->
         <div class="col">
           <div class="project-card">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="project-image" alt="Hackathon Project">
+            <img src="assets/images/projects/threadpool.png" class="project-image" alt="Thread Pool">
             <div class="project-content">
               <h2 class="project-title">Thread Pool Optimization</h2>
               <p class="project-description">
@@ -241,7 +120,7 @@
                 <li>Graceful shutdown with in-flight task completion</li>
               </ul>
               <div class="project-links">
-                <a href="https://github.com/mxcaoalina/Thread_Pool" class="btn btn-dark">View Code</a>
+                <a href="https://github.com/mxcaoalina/Thread-Pool" class="btn btn-dark">View Code</a>
               </div>
             </div>
           </div>
@@ -258,5 +137,6 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="assets/js/portfolio.js"></script>
   </body>
 </html>
